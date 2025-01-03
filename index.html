@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Home | Monitoring Suhu dan Kelembaban Kota Bandung</title>
+</head>
+
+<body>
+  <div class="container">
+    <aside id="sidebar">
+      <div class="sidebar-head">
+        <div class="sidebar-title">
+          <button id="toggle-btn">☰</button>
+          <h2>My WebGIS</h2>
+        </div>
+        <div class="sidebar-subtitle">
+          <p>Sistem Monitoring Suhu dan Kelembaban di Kota Bandung</p>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <a href="index.html">🏠<span class="nav-labels">Home</span></a>
+        </li>
+        <li>
+          <a href="maps.html">🗺️<span class="nav-labels">Maps</span></a>
+        </li>
+        <li>
+          <a href="about.html">👤<span class="nav-labels">About</span></a>
+        </li>
+      </ul>
+    </aside>
+    <main>
+      <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+          <h1>Monitoring Suhu dan Kelembaban</h1>
+          <p class="subtitle">
+            Solusi berbasis teknologi untuk Kota Bandung menggunakan QGIS.
+          </p>
+          <a href="maps.html" class="cta-button">Lihat Peta</a>
+        </div>
+      </section>
+      <section class="sensors">
+        <h2>Sensor yang Digunakan</h2>
+        <div class="sensor-list">
+          <div class="sensor-item">
+            <img src="https://tokoteknologi.co.id/resources/image/18/c1/f.jpg" alt="DHT22" class="sensor-icon" />
+            <h3>DHT22</h3>
+            <p>Sensor untuk memantau suhu dan kelembaban secara akurat.</p>
+          </div>
+          <div class="sensor-item">
+            <img src="https://tokoteknologi.co.id/resources/image/18/bf/6.jpg" alt="GPS NEO 6M" class="sensor-icon" />
+            <h3>GPS NEO 6M</h3>
+            <p>Sensor GPS untuk menentukan lokasi dengan presisi tinggi.</p>
+          </div>
+          <div class="sensor-item">
+            <img src="https://raharja.ac.id/wp-content/uploads/2021/11/ESP32-Module.png" alt="ESP32"
+              class="sensor-icon" />
+            <h3>ESP32</h3>
+            <p>Microcontroller untuk pengelolaan data dan komunikasi IoT.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="monitoring-points">
+        <h2>Titik Pemantauan</h2>
+        <div class="monitoring-cards">
+          <!-- Titik 1 -->
+          <div class="card">
+            <img src="images/image1.jpg" alt="Titik 1" class="stasiun-thumbnail" />
+            <h3>Titik 1: <span id="residental1"></span></h3>
+            <div class="point-contents">
+              <div class="point-coordinate">
+                <p>Latitude: <span id="lat1"></span></p>
+                <p>Longitude: <span id="long1"></span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps1">🗺️</a>
+            </div>
+          </div>
+      
+          <!-- Titik 2 -->
+          <div class="card">
+            <img src="images/image2.jpg" alt="Titik 2" class="stasiun-thumbnail" />
+            <h3>Titik 2: <span id="residental2"></span></h3>
+            <div class="point-contents">
+              <div class="point-coordinate">
+                <p>Latitude: <span id="lat2"></span></p>
+                <p>Longitude: <span id="long2"></span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps2">🗺️</a>
+            </div>
+          </div>
+      
+          <!-- Titik 3 -->
+          <div class="card">
+            <img src="images/image3.jpg" alt="Titik 3" class="stasiun-thumbnail" />
+            <h3>Titik 3: <span id="residental3"></span></h3>
+            <div class="point-contents">
+              <div class="point-coordinate">
+                <p>Latitude: <span id="lat3"></span></p>
+                <p>Longitude: <span id="long3"></span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps3">🗺️</a>
+            </div>
+          </div>
+      
+          <!-- Titik 4 -->
+          <div class="card">
+            <img src="images/image4.jpg" alt="Titik 4" class="stasiun-thumbnail" />
+            <h3>Titik 4: <span id="residental4"></span></h3>
+            <div class="point-contents">
+              <div class="point-coordinate">
+                <p>Latitude: <span id="lat4"></span></p>
+                <p>Longitude: <span id="long4"></span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps4">🗺️</a>
+            </div>
+          </div>
+      
+          <!-- Titik 5 -->
+          <div class="card">
+            <img src="images/image5.jpg" alt="Titik 5" class="stasiun-thumbnail" />
+            <h3>Titik 5: <span id="residental5"></span></h3>
+            <div class="point-contents">
+              <div class="point-coordinate">
+                <p>Latitude: <span id="lat5"></span></p>
+                <p>Longitude: <span id="long5"></span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps5">🗺️</a>
+            </div>
+          </div>
+      
+          <!-- Titik 6 -->
+          <div class="card">
+            <img src="images/image6.jpg" alt="Titik 6" class="stasiun-thumbnail" />
+            <h3>Titik 6: <span id="residental6"></span></h3>
+            <div class="point-contents">
+              <div class="point-coordinate">
+                <p>Latitude: <span id="lat6"></span></p>
+                <p>Longitude: <span id="long6"></span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps6">🗺️</a>
+            </div>
+          </div>
+      
+          <!-- Titik 7 -->
+          <div class="card">
+            <img src="images/image7.jpg" alt="Titik 7" class="stasiun-thumbnail" />
+            <h3>Titik 7: <span id="residental7"></span></h3>
+            <div class="point-contents">
+              <div class="point-coordinate">
+                <p>Latitude: <span id="lat7"></span></p>
+                <p>Longitude: <span id="long7"></span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps7">🗺️</a>
+            </div>
+          </div>
+      
+          <!-- Titik 8 -->
+          <div class="card">
+            <img src="images/image8.jpg" alt="Titik 8" class="stasiun-thumbnail" />
+            <h3>Titik 8: <span id="residental8"></span></h3>
+            <div class="point-contents">
+              <div class="point-coordinate">
+                <p>Latitude: <span id="lat8"></span></p>
+                <p>Longitude: <span id="long8"></span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps8">🗺️</a>
+            </div>
+          </div>
+      
+          <!-- Titik 9 -->
+          <div class="card">
+            <img src="images/image9.jpg" alt="Titik 9" class="stasiun-thumbnail" />
+            <h3>Titik 9: <span id="residental9"></span></h3>
+            <div class="point-contents">
+              <div class="point-coordinate">
+                <p>Latitude: <span id="lat9"></span></p>
+                <p>Longitude: <span id="long9"></span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps9">🗺️</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+  <!-- Section Lokasi dan Google Maps -->
+  <section class="location">
+    <h2>Lokasi Kantor Pusat</h2>
+    <div class="location-content">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.381716630867!2d106.80979187393912!3d-6.599393064509932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5d97d3764c3%3A0xd56ba6305181755c!2sUniversitas%20Pakuan!5e0!3m2!1sid!2sid!4v1734570592136!5m2!1sid!2sid"
+          width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="contact-info">
+        <div>
+          <h3>Universitas Pakuan</h3>
+          <p>
+            <strong>Alamat:</strong>Jl. Pakuan, RT.02/RW.06, Tegallega,
+            Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16129
+          </p>
+          <p><strong>Email:</strong>rektorat@unpak.ac.id</p>
+          <p><strong>Telepon:</strong> +62-811-1234-5678</p>
+        </div>
+
+        <div>
+          <a class="hub-button" target="_blank"
+            href="mailto:rektorat@unpak.ac.id?subject=Tanya%20Stasium%20Pemantauan&body=Halo%20saya%20<Nama%20Anda>,%20ingin%20mengetahui%20lebih%20lanjut%20tentang%20<deskripsikan%20pertanyaan%20anda>">Hubungi
+            via Email</a>
+          <br />
+          <a class="hub-button" target="_blank"
+            href="https://wa.me/628551111980?text=Halo%20saya%20<Nama%20Anda>,%20ingin%20mengetahui%20lebih%20lanjut%20tentang%20<deskripsikan%20pertanyaan%20anda>">Hubungi
+            via Whatsapp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Monitoring Suhu dan Kelembaban | Kota Bandung</p>
+    <p>Dibuat dengan dedikasi untuk lingkungan</p>
+  </footer>
+  </main>
+  </div>
+  <script>
+    function fetchData() {
+      var apiUrl =
+        "https://api.thingspeak.com/channels/2796682/feeds/last.json?timezone=Asia%2FJakarta&api_key=K8FSLU271NV6B31C";
+
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          fetch(
+            `https://nominatim.openstreetmap.org/reverse?lat=${data.field1}&lon=${data.field2}&format=json`
+          )
+            .then((response) => response.json())
+            .then((dataLoc) => {
+              document.getElementById("residental1").innerText =
+                dataLoc.address.road;
+              console.log(dataLoc);
+              document.getElementById("lat1").innerText = dataLoc.lat;
+              document.getElementById("long1").innerText = dataLoc.lon;
+              document.getElementById(
+                "go-to-maps1"
+              ).href = `https://www.google.com/maps?q=${dataLoc.lat},${dataLoc.lon}`;
+            });
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+
+      var apiUrl2 =
+        "https://api.thingspeak.com/channels/2796685/feeds/last.json?timezone=Asia%2FJakarta&api_key=2ZWSARYU16BMI5SG";
+
+      fetch(apiUrl2)
+        .then((response2) => response2.json())
+        .then((data2) => {
+          fetch(
+            `https://nominatim.openstreetmap.org/reverse?lat=${data2.field1}&lon=${data2.field2}&format=json`
+          )
+            .then((response2) => response2.json())
+            .then((dataLoc2) => {
+              document.getElementById("residental2").innerText =
+                dataLoc2.address.village;
+              document.getElementById("lat2").innerText = dataLoc2.lat;
+              document.getElementById("long2").innerText = dataLoc2.lon;
+              document.getElementById(
+                "go-to-maps2"
+              ).href = `https://www.google.com/maps?q=${dataLoc2.lat},${dataLoc2.lon}`;
+            });
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+
+      var apiUrl3 =
+        "https://api.thingspeak.com/channels/2796686/feeds/last.json?timezone=Asia%2FJakarta&api_key=F3D91183ZRGSTVIJ";
+
+      fetch(apiUrl3)
+        .then((response3) => response3.json())
+        .then((data3) => {
+          fetch(
+            `https://nominatim.openstreetmap.org/reverse?lat=${data3.field1}&lon=${data3.field2}&format=json`
+          )
+            .then((response2) => response2.json())
+            .then((dataLoc3) => {
+              document.getElementById("residental3").innerText =
+                dataLoc3.address.village;
+              document.getElementById("lat3").innerText = dataLoc3.lat;
+              document.getElementById("long3").innerText = dataLoc3.lon;
+              document.getElementById(
+                "go-to-maps3"
+              ).href = `https://www.google.com/maps?q=${dataLoc3.lat},${dataLoc3.lon}`;
+            });
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+
+      var apiUrl4 =
+        "https://api.thingspeak.com/channels/2784707/feeds/last.json?timezone=Asia%2FJakarta&api_key=ZCDJCJMU2H2S60PI";
+
+      fetch(apiUrl4)
+        .then((response4) => response4.json())
+        .then((data4) => {
+          fetch(
+            `https://nominatim.openstreetmap.org/reverse?lat=${data4.field1}&lon=${data4.field2}&format=json`
+          )
+            .then((response4) => response4.json())
+            .then((dataLoc4) => {
+              document.getElementById("residental4").innerText = 
+                dataLoc4.address.road;
+              document.getElementById("lat4").innerText = dataLoc4.lat;
+              document.getElementById("long4").innerText = dataLoc4.lon;
+              document.getElementById(
+                "go-to-maps4"
+              ).href = `https://www.google.com/maps?q=${dataLoc4.lat},${dataLoc4.lon}`;
+              console.log(dataLoc4);
+            });
+        })
+        .catch((error) => console.error("Error fetching data for Point 4:", error));
+
+      var apiUrl5 =
+        "https://api.thingspeak.com/channels/2796689/feeds/last.json?timezone=Asia%2FJakarta&api_key=RWKR6XO4VQPD01PURWKR6XO4VQPD01PU";
+
+      fetch(apiUrl5)
+        .then((response5) => response5.json())
+        .then((data5) => {
+          fetch(
+            `https://nominatim.openstreetmap.org/reverse?lat=${data5.field1}&lon=${data5.field2}&format=json`
+          )
+            .then((response5) => response5.json())
+            .then((dataLoc5) => {
+              document.getElementById("residental5").innerText = 
+                dataLoc5.address.road;
+              document.getElementById("lat5").innerText = dataLoc5.lat;
+              document.getElementById("long5").innerText = dataLoc5.lon;
+              document.getElementById(
+                "go-to-maps5"
+              ).href = `https://www.google.com/maps?q=${dataLoc5.lat},${dataLoc5.lon}`;
+              console.log(dataLoc5);
+            });
+        })
+        .catch((error) => console.error("Error fetching data for Point 5:", error));
+
+      var apiUrl6 =
+        "https://api.thingspeak.com/channels/2796691/feeds/last.json?timezone=Asia%2FJakarta&api_key=CTZUFD46VRFHH7UG";
+
+      fetch(apiUrl6)
+        .then((response6) => response6.json())
+        .then((data6) => {
+          fetch(
+            `https://nominatim.openstreetmap.org/reverse?lat=${data6.field1}&lon=${data6.field2}&format=json`
+          )
+            .then((response6) => response6.json())
+            .then((dataLoc6) => {
+              document.getElementById("residental6").innerText = 
+                dataLoc6.address.village;
+              document.getElementById("lat6").innerText = dataLoc6.lat;
+              document.getElementById("long6").innerText = dataLoc6.lon;
+              document.getElementById(
+                "go-to-maps6"
+              ).href = `https://www.google.com/maps?q=${dataLoc6.lat},${dataLoc6.lon}`;
+              console.log(dataLoc6);
+            });
+        })
+        .catch((error) => console.error("Error fetching data for Point 6:", error));
+
+      var apiUrl7 =
+        "https://api.thingspeak.com/channels/2796692/feeds/last.json?timezone=Asia%2FJakarta&api_key=5445YLSO4B28BWAA";
+
+      fetch(apiUrl7)
+        .then((response7) => response7.json())
+        .then((data7) => {
+          fetch(
+            `https://nominatim.openstreetmap.org/reverse?lat=${data7.field1}&lon=${data7.field2}&format=json`
+          )
+            .then((response7) => response7.json())
+            .then((dataLoc7) => {
+              document.getElementById("residental7").innerText = 
+                dataLoc7.address.road;
+              document.getElementById("lat7").innerText = dataLoc7.lat;
+              document.getElementById("long7").innerText = dataLoc7.lon;
+              document.getElementById(
+                "go-to-maps7"
+              ).href = `https://www.google.com/maps?q=${dataLoc7.lat},${dataLoc7.lon}`;
+              console.log(dataLoc7);
+            });
+        })
+        .catch((error) => console.error("Error fetching data for Point 7:", error));
+
+      var apiUrl8 =
+        "https://api.thingspeak.com/channels/2796693/feeds/last.json?timezone=Asia%2FJakarta&api_key=W2Z3WH4YSW3IUVLX";
+
+      fetch(apiUrl8)
+        .then((response8) => response8.json())
+        .then((data8) => {
+          fetch(
+            `https://nominatim.openstreetmap.org/reverse?lat=${data8.field1}&lon=${data8.field2}&format=json`
+          )
+            .then((response8) => response8.json())
+            .then((dataLoc8) => {
+              document.getElementById("residental8").innerText = 
+                dataLoc8.address.road;
+              document.getElementById("lat8").innerText = dataLoc8.lat;
+              document.getElementById("long8").innerText = dataLoc8.lon;
+              document.getElementById(
+                "go-to-maps8"
+              ).href = `https://www.google.com/maps?q=${dataLoc8.lat},${dataLoc8.lon}`;
+              console.log(dataLoc8);
+            });
+        })
+        .catch((error) => console.error("Error fetching data for Point 8:", error));
+
+      var apiUrl9 =
+        "https://api.thingspeak.com/channels/2796705/feeds/last.json?timezone=Asia%2FJakarta&api_key=L25N9NVPQ02EBJ7Q";
+
+      fetch(apiUrl9)
+        .then((response9) => response9.json())
+        .then((data9) => {
+          fetch(
+            `https://nominatim.openstreetmap.org/reverse?lat=${data9.field1}&lon=${data9.field2}&format=json`
+          )
+            .then((response9) => response9.json())
+            .then((dataLoc9) => {
+              document.getElementById("residental9").innerText = 
+                dataLoc9.address.village;
+              document.getElementById("lat9").innerText = dataLoc9.lat;
+              document.getElementById("long9").innerText = dataLoc9.lon;
+              document.getElementById(
+                "go-to-maps9"
+              ).href = `https://www.google.com/maps?q=${dataLoc9.lat},${dataLoc9.lon}`;
+              console.log(dataLoc9);
+            });
+        })
+        .catch((error) => console.error("Error fetching data for Point 9:", error));
+
+    }
+
+    fetchData();
+
+    const sidebar = document.getElementById("sidebar");
+    const toggleBtn = document.getElementById("toggle-btn");
+    sidebar.classList.toggle("collapsed");
+    document.querySelector("main").classList.toggle("collapsed");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("collapsed");
+      document.querySelector("main").classList.toggle("collapsed");
+    });
+  </script>
+</body>
+
+</html>

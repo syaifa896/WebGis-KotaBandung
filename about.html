@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>About Us | Monitoring Suhu dan Kelembaban Kota Bandung</title>
+    <style>
+      /* Styling untuk profile */
+      .profile {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        list-style-type: none;
+        padding: 0;
+        justify-content: center;
+      }
+      .profile li {
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        width: 200px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .profile li img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+      .profile h3 {
+        margin: 5px 0;
+        font-size: 18px;
+        color: #333;
+      }
+      .profile p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #666;
+      }
+
+      /* Sidebar styling */
+      #sidebar {
+        width: 250px;
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 15px;
+        position: fixed;
+        height: 100%;
+      }
+      #sidebar .sidebar-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      #sidebar h2 {
+        font-size: 20px;
+        margin: 0;
+      }
+      #sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0;
+      }
+      #sidebar ul li {
+        margin: 10px 0;
+      }
+      #sidebar ul li a {
+        color: #ecf0f1;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      #sidebar ul li a:hover {
+        text-decoration: underline;
+      }
+
+      /* Main content styling */
+      .about-content {
+        margin-left: 280px;
+        padding: 20px;
+      }
+      .about-content h1 {
+        text-align: center;
+        color: #2c3e50;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="about-container">
+      <aside id="sidebar">
+        <div class="sidebar-head">
+          <div class="sidebar-title">
+            <button id="toggle-btn">☰</button>
+            <h2>My WebGIS</h2>
+          </div>
+          <div class="sidebar-subtitle">
+            <p>Sistem Monitoring Suhu dan Kelembaban di Kota Bandung</p>
+          </div>
+        </div>
+        <ul>
+          <li>
+            <a href="index.html">🏠<span class="nav-labels">Home</span></a>
+          </li>
+          <li>
+            <a href="maps.html">🗺️<span class="nav-labels">Maps</span></a>
+          </li>
+          <li>
+            <a href="about.html">👤<span class="nav-labels">About</span></a>
+          </li>
+        </ul>
+      </aside>
+      <main>
+        <section class="about-content">
+          <h1>About Us</h1>
+          <ul class="profile">
+            <li>
+              <img
+                src="/img/foto1.png"
+                alt="Ahmad Sopyan Sauri"
+              />
+              <h3>Ahmad Sopyan Sauri</h3>
+              <p>NPM: 065122207</p>
+              <p>Tugas: Analis QGIS & Buat laporan</p>
+            </li>
+            <li>
+              <img
+                src="/img/foto2.png"
+                alt="Muhammad Haikal Firdaus"
+              />
+              <h3>Muhammad Haikal Firdaus</h3>
+              <p>NPM: 065122201</p>
+              <p>Tugas: Analisis QGIS & Buat WebGIS</p>
+            </li>
+            <li>
+              <img
+                src="/img/foto3.png"
+                alt="Syaifa Turrohman"
+              />
+              <h3>Syaifa Turrohman</h3>
+              <p>NPM: 065122231</p>
+              <p>Tugas: Analisis QGIS & Buat WebGIS</p>
+            </li>
+            <li>
+              <img
+                src="/img/foto4.png"
+                alt="Muhamad Zidan Febrian"
+              />
+              <h3>Muhamad Zidan Febrian</h3>
+              <p>NPM: 065122182</p>
+              <p>Tugas: Implementasi IoT & PPT</p>
+            </li>
+            <li>
+              <img
+                src="/img/foto5.png"
+                alt="Bima Ariya Saka"
+              />
+              <h3>Bima Ariya Saka</h3>
+              <p>NPM: 065122186</p>
+              <p>Tugas: Monitoring data & Buat WebGIS</p>
+            </li>
+            <li>
+              <img
+                src="/img/foto6.png"
+                alt="Rangga Kusumah Putra MW"
+              />
+              <h3>Rangga Kusumah Putra MW</h3>
+              <p>NPM: 065122197</p>
+              <p>Tugas: Implementasi IoT & Monitoring data</p>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
